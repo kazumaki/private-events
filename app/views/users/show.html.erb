@@ -1,1 +1,5 @@
-<%= @user.name %>
+<%= @user.name %> 
+<br>
+<% @events.each do |e| %> 
+  <%= e.id %>
+<% end %>
