@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     @events = @user.events
+    @attending_events = @user.attending_events
   end
 
   private

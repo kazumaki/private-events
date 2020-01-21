@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  get '/invites/:event_id/new', to: 'invites#new'
+  post '/invites', to: 'invites#create'
+
   resources :events, only: [:new, :index, :create, :show]
   resources :users, only: [:show, :new, :create]
 

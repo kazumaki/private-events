@@ -1,5 +1,13 @@
-<% @events.each do |e|%>
-    <%= e.creator.name%> <br> 
-     <%= e.description%> <br> 
-     <%= e.date%> <br>
+Upcoming Events <br>
+<% @upcoming_events.each do |e|%>
+  <%= e.creator.name%> <br> 
+  <%= e.description%> <br> 
+  <%= e.date%> <br>
+<% end%>
+
+Past Events <br>
+<% @past_events.each do |e|%>
+  <%= e.creator.name%> <br> 
+  <%= e.description%> <br> 
+  <%= e.date%> <br>
 <% end%>

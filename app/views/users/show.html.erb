@@ -1,5 +1,23 @@
 <%= @user.name %> 
 <br>
-<% @events.each do |e| %> 
-  <%= e.id %>
+
+Created events: <br>
+<% @events.each do |e| %>
+  <%= link_to e.id, e %> <br>
+  <%= e.description %> <br>
+  <%= e.date %> <br>
+<% end %>
+
+<br>
+
+Upcoming events: <br>
+<% @user.upcoming_events.each do |e| %>
+  <%= e.description%> <br> 
+  <%= e.date%> <br>
+<% end %>
+
+Previous events: <br>
+<% @user.previous_events.each do |e| %>
+  <%= e.description%> <br> 
+  <%= e.date%> <br>
 <% end %>

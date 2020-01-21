@@ -1,6 +1,6 @@
 <%= form_for @event do |f|%>
 <%= f.label :description%>
 <%= f.text_area :description%>
-<%= f.hidden_field :date, value: DateTime.now %>
+<%= f.hidden_field :date, value: 2.hours.since %>
 <%= f.submit "Create Event" %>
 <% end %>
