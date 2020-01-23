@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def new
     @event = Event.new
+    redirect_to login_path if !logged_in?
   end
 
   def index
@@ -9,9 +10,9 @@ class EventsController < ApplicationController
   end
 
   def create
-    event = current_user.events.build(event_params)
-    if event.save
-      redirect_to event
+    @event = current_user.events.build(event_params)
+    if @event.save
+      redirect_to @event
     else
       render 'new'
     end

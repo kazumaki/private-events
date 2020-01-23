@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
   def new
+    redirect_to current_user if logged_in?
     @user = User.new
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
-      redirect_to user
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to @user
     else
       render 'new'
     end
