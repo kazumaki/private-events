@@ -1,8 +1,4 @@
 class SessionsController < ApplicationController
-  helper_method :current_user
-
-  def new end
-
   def create
     user = User.find_by(name: params[:session][:name])
     if user

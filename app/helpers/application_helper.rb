@@ -1,9 +1,6 @@
 module ApplicationHelper
   def current_user
-    if session[:user_id]
-      return User.find_by(id: session[:user_id])
-    end
-    nil
+    User.find_by(id: session[:user_id])
   end
 
   def logged_in?
