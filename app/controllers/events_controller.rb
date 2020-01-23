@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def new
     @event = Event.new
-    redirect_to login_path if !logged_in?
+    redirect_to login_path unless logged_in?
   end
 
   def index
@@ -23,7 +23,8 @@ class EventsController < ApplicationController
   end
 
   private
-    def event_params
-      params.require(:event).permit(:description, :date)
-    end
+
+  def event_params
+    params.require(:event).permit(:description, :date)
+  end
 end
