@@ -1,0 +1,8 @@
+<%= @event.creator.name%>, <%= @event.description%>
+
+<br>
+Attendees: <br>
+<% @event.attendees.each do |attendee| %>
+  <%= attendee.name %> <br>
+<% end %>
+<%= link_to "Invite", invites_url + "/" + @event.id.to_s + "/new" %>
